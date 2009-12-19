@@ -163,7 +163,7 @@
       IDEA plugin development sandbox (useful if you want to hack on the plugin).
 
       Alternatively, just download the zip archive and extract it into IDEA's plugins
-      directory. On a Mac, this directory is located at /~/Library/Application Support/IntelliJIdea90.
+      directory. On a Mac, this directory is located at ~/Library/Application Support/IntelliJIdea90.
     </echo>
     <zip
         destfile="${dist}/src/${project.name.compressed}-${build.version.major}.${build.version.minor}.${build.version.revision}.${build.number}-src.zip"
