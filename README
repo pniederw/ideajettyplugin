@@ -1,11 +1,14 @@
-README for ${project} plug-in sources
+README for IDEA Jetty Plugin
 
       Version 0.5.0.59
       December 19, 2009
 
-      To compile using ANT, first edit idea.build.properties as appropriate.
+      To compile using Ant, first edit idea.build.properties as appropriate.
 
       The 'build' target will create a zip archive suitable for extracting into
-      IDEA's plug-ins directory. The 'deploy' target will unzip the archive into an
-      IDEA plug-in development sandbox (useful if you want to hack on the plug-in).
+      IDEA's plugins directory. The 'deploy' target will unzip the archive into an
+      IDEA plugin development sandbox (useful if you want to hack on the plugin).
+
+      Alternatively, just download the zip archive and extract it into IDEA's plugins
+      directory. On a Mac, this directory is located at /~/Library/Application Support/IntelliJIdea90.
     
