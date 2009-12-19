@@ -15,12 +15,12 @@
  */
 package org.codebrewer.idea.jetty;
 
-import com.intellij.facet.pointers.FacetPointer;
 import com.intellij.javaee.deployment.DeploymentModel;
-import com.intellij.javaee.facet.JavaeeFacet;
 import com.intellij.javaee.run.configuration.CommonModel;
 import com.intellij.openapi.util.InvalidDataException;
 import com.intellij.openapi.util.WriteExternalException;
+import com.intellij.packaging.artifacts.ArtifactPointer;
+
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 
@@ -35,7 +35,7 @@ public class JettyModuleDeploymentModel extends DeploymentModel
 
   private String contextPath = DEFAULT_CONTEXT_PATH;
 
-  public JettyModuleDeploymentModel(CommonModel project, FacetPointer<JavaeeFacet> facetPointer)
+  public JettyModuleDeploymentModel(CommonModel project, ArtifactPointer facetPointer)
   {
     super(project, facetPointer);
   }

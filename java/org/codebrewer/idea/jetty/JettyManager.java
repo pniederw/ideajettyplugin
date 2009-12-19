@@ -48,7 +48,8 @@ public class JettyManager extends AppServerIntegration
   @NonNls
   public static final String PLUGIN_NAME = "JettyIntegration";
 
-  public static Icon getIcon()
+  @Override
+  public Icon getIcon()
   {
     return ICON_JCOLON;
   }

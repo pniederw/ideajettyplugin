@@ -110,7 +110,7 @@ public class JettyUtil
       throw new JettyException(JettyBundle.message("exception.text.null.deployment.source"));
     }
 
-    final DeploymentSource deploymentMethod = model.getSpecifiedDeploymentSource(); // DeploymentSource.FROM_JAR or DeploymentSource.FROM_EXPLODED
+    final DeploymentSource deploymentMethod = model.getDeploymentSource(); // DeploymentSource.FROM_JAR or DeploymentSource.FROM_EXPLODED
     final String contextPath = model.getContextPath();
     final DocType docType = new DocType(JETTY_DOCTYPE_ELEMENT_NAME, JETTY_DOCTYPE_PUBLIC_ID, JETTY_DOCTYPE_SYSTEM_ID);
     final Element rootElement = new Element(JETTY_DOCTYPE_ELEMENT_NAME);

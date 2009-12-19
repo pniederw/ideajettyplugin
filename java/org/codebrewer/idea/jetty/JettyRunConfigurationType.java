@@ -57,7 +57,7 @@ public class JettyRunConfigurationType extends J2EEConfigurationType
 
   public Icon getIcon()
   {
-    return JettyManager.getIcon();
+    return JettyManager.getInstance().getIcon();
   }
 
   @NonNls

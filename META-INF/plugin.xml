@@ -5,9 +5,14 @@
   <description>Allows configuration and use of the Jetty webserver directly from IntelliJ IDEA, for running/debugging web applications.</description>
   <version>##PLUGIN_VERSION##</version>
   <depends>com.intellij.javaee</depends>
-  <vendor email="mark@codebrewer.org" logo="/images/jetty16x16.png">Codebrewer</vendor>
+  <vendor email="mark@codebrewer.org" logo="/images/jetty16x16.png" homepage="http://github.com/pniederw/ideajettyplugin">Codebrewer</vendor>
   <change-notes>
-    <![CDATA[<b>Version 0.4.1 (Build 54)</b>
+    <![CDATA[<b>Version 0.5.0 (Build 59)</b>
+<ul>
+<li>Forked the code base and put it up on http://github.com/pniederw/ideajettyplugin.</li>
+<li>New: Updated for IDEA 9.x.</li>
+</ul>
+<b>Version 0.4.1 (Build 54)</b>
 <ul>
 <li>Fixed: Updated version dependency information for compatibility with IDEA 8.1.</li>
 </ul>

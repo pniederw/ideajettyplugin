@@ -20,15 +20,13 @@ import com.intellij.execution.configurations.RuntimeConfigurationError;
 import com.intellij.execution.configurations.RuntimeConfigurationException;
 import com.intellij.execution.process.ProcessHandler;
 import com.intellij.javaee.appServerIntegrations.ApplicationServer;
+import com.intellij.javaee.deployment.DeploymentModel;
 import com.intellij.javaee.deployment.DeploymentProvider;
-import com.intellij.javaee.facet.JavaeeFacetUtil;
 import com.intellij.javaee.run.configuration.CommonModel;
 import com.intellij.javaee.run.configuration.ServerModel;
 import com.intellij.javaee.run.execution.DefaultOutputProcessor;
 import com.intellij.javaee.run.execution.OutputProcessor;
 import com.intellij.javaee.serverInstances.J2EEServerInstance;
-import com.intellij.javaee.web.facet.WebFacet;
-import com.intellij.openapi.module.Module;
 import com.intellij.openapi.options.SettingsEditor;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.DefaultJDOMExternalizer;
@@ -231,13 +229,10 @@ public class JettyModel implements ServerModel
 
     // Todo - add those contexts already 'claimed' by active Jetty configuration files
 
-    final Module[] modules = commonModel.getModules();
+    for (DeploymentModel m : commonModel.getDeploymentModels()) {
+      if (m instanceof JettyModuleDeploymentModel) {
+        final JettyModuleDeploymentModel model = (JettyModuleDeploymentModel) m;
 
-    for (final WebFacet webFacet : JavaeeFacetUtil.getInstance().getJavaeeFacets(WebFacet.ID, modules)) {
-      final JettyModuleDeploymentModel model =
-        (JettyModuleDeploymentModel) commonModel.getDeploymentModel(webFacet);
-
-      if (model.DEPLOY) {
         final String contextPath = model.getContextPath();
 
         if (!contexts.add(contextPath)) {

@@ -15,13 +15,13 @@
  */
 package org.codebrewer.idea.jetty;
 
-import com.intellij.facet.pointers.FacetPointersManager;
 import com.intellij.javaee.deployment.DeploymentModel;
-import com.intellij.javaee.facet.JavaeeFacet;
 import com.intellij.javaee.run.configuration.CommonModel;
 import com.intellij.openapi.options.ConfigurationException;
 import com.intellij.openapi.options.SettingsEditor;
 import com.intellij.openapi.util.Factory;
+import com.intellij.packaging.artifacts.Artifact;
+import com.intellij.packaging.artifacts.ArtifactPointerManager;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.BorderFactory;
@@ -41,14 +41,14 @@ public class JettyDeploymentSettingsEditor extends SettingsEditor<DeploymentMode
   private JPanel panel;
   private JTextField contextPath;
 
-  public JettyDeploymentSettingsEditor(final CommonModel configuration, final JavaeeFacet facet)
+  public JettyDeploymentSettingsEditor(final CommonModel configuration, final Artifact artifact)
   {
     super(new Factory<DeploymentModel>()
     {
       public JettyModuleDeploymentModel create()
       {
-        final FacetPointersManager manager = FacetPointersManager.getInstance(facet.getModule().getProject());
-        return new JettyModuleDeploymentModel(configuration, manager.create(facet));
+        final ArtifactPointerManager manager = ArtifactPointerManager.getInstance(configuration.getProject());
+        return new JettyModuleDeploymentModel(configuration, manager.createPointer(artifact));
       }
     });
 
