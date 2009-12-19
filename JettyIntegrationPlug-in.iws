@@ -41,7 +41,6 @@
   </component>
   <component name="ChangeListManager" verified="true">
     <list default="true" readonly="true" id="35fefdc0-e599-4dd4-acfe-24d5fb93d98e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/org/codebrewer/idea/jetty/build/build.properties" afterPath="$PROJECT_DIR$/java/org/codebrewer/idea/jetty/build/build.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JettyIntegrationPlug-in.iws" afterPath="$PROJECT_DIR$/JettyIntegrationPlug-in.iws" />
     </list>
     <ignored path="JettyIntegrationPlug-in.iws" />
